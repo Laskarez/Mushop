@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "932380175165",
+    "firebase_url": "https://mushop-94e40.firebaseio.com",
+    "project_id": "mushop-94e40",
+    "storage_bucket": "mushop-94e40.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:932380175165:android:584572c86789f51f",
+        "android_client_info": {
+          "package_name": "com.example.mushop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "932380175165-rgbimeif54fvh0k63q8lj2uenis48svr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.mushop",
+            "certificate_hash": "81281A400086E32DB1DADAEAB53FB6F350EFE4C7"
+          }
+        },
+        {
+          "client_id": "932380175165-5j95mm21pkp8oo3s681dbhcqsn1mnirl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCfINBdNPGVclibTOkbnVJiZi74h-DpBEE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "932380175165-5j95mm21pkp8oo3s681dbhcqsn1mnirl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
