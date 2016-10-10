@@ -1,0 +1,7 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+    <item name="ic_search" type="drawable">@drawable/ic_search</item>
+    <item name="ic_home" type="drawable">@drawable/home_outline</item>
+    <item name="ic_albums" type="drawable">@drawable/ic_album</item>
+    <item name="ic_library" type="drawable">@drawable/ic_library_music</item>
+    <item name="ic_log" type="drawable">@drawable/ic_login</item>
+</resources>
