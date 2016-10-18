@@ -30,6 +30,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
+import java.util.Collections;
 import java.util.Map;
 
 
@@ -56,7 +57,9 @@ public class SearchFragment extends Fragment {
         buscar = (Button) view.findViewById(R.id.buscar);
         busqueda = (EditText) view.findViewById(R.id.busqueda);
         tabla = (TableLayout) view.findViewById(R.id.tablaBusqueda);
-        searchDataBase();
+        ref = new FireApp();
+        ref.searchSongsDataBase();
+        listaCanciones = ref.listaCanciones;
         buscar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -73,49 +76,19 @@ public class SearchFragment extends Fragment {
     }
 
 
-    public void searchDataBase() {
-        DatabaseReference mData = FirebaseDatabase.getInstance().getReference();
-        DatabaseReference song = mData.child("song");
-        song.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                try {
-                    Map<String, Object> map = (Map<String, Object>) dataSnapshot.getValue();
-                    Map<String, Object> map2 = null;
-                    int cantCanciones = map.values().size();
-                    for (int i = 1; i <= cantCanciones; i++) {
-                        String song = "song_";
-                        if (i < 10) {
-                            song += "0" + i;
-                        } else {
-                            song += i;
-                        }
-                        map2 = (Map<String, Object>) map.get(song);
-                        Cancion cancion = new Cancion(
-                                Integer.parseInt(map2.get("id_song").toString()),
-                                map2.get("song_name").toString(),
-                                Integer.parseInt(map2.get("listening").toString()));
-                        listaCanciones.add(cancion);
-                    }
-                } catch (Exception e) {
-                    Log.v("Excepcion", e.getMessage());
-                }
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });
-    }
-
     public void showList() {
+
+        Collections.sort(listaCanciones, new ListennigComparator());
+
+
         for (int j = 0; j < listaCanciones.size(); j++) {
             String nombreCancion = listaCanciones.get(j).getNombre_cancion();
             if (nombreCancion.toLowerCase().contains(busquedaStr.toLowerCase())) {
                 Context act = getContext();
                 TableRow fila = new TableRow(act);
                 TextView tv = new TextView(act);
+                tv.setPadding(10,10,10,10);
+                tv.setTextSize(16);
                 tv.setText(nombreCancion);
                 fila.addView(tv);
                 tabla.addView(fila);

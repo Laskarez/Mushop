@@ -9,11 +9,19 @@ public class Cancion {
     public int id_cancion;
     public String nombre_cancion;
     public int vecesEscuchada;
+    public int album;
+    public int artista;
 
-    public Cancion(int id_cancion, String nombre_cancion, int vecesEscuchada) {
+    public Cancion(){
+
+    }
+
+    public Cancion(int id_cancion, String nombre_cancion, int vecesEscuchada, int album, int artista) {
         this.id_cancion = id_cancion;
         this.nombre_cancion = nombre_cancion;
         this.vecesEscuchada = vecesEscuchada;
+        this.album = album;
+        this.artista = artista;
     }
 
     public int getId_cancion() {
@@ -38,5 +46,22 @@ public class Cancion {
 
     public void setNombre_cancion(String nombre_cancion) {
         this.nombre_cancion = nombre_cancion;
+    }
+
+
+    public int getAlbum() {
+        return album;
+    }
+
+    public void setAlbum(int album) {
+        this.album = album;
+    }
+
+    public int getArtista() {
+        return artista;
+    }
+
+    public void setArtista(int artista) {
+        this.artista = artista;
     }
 }

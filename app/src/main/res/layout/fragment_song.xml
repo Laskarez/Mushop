@@ -1,0 +1,83 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.mushop.SongFragment">
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="317dp"
+        app:srcCompat="@drawable/ic_music_circle"
+        android:id="@+id/imagen" />
+
+    <RelativeLayout
+        android:layout_marginTop="330dp"
+        android:layout_width="match_parent"
+        android:layout_height="167dp">
+
+        <TextView
+            android:text="Nombre de la canción"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="normal|bold"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            android:padding="5dp"
+            android:id="@+id/nombreCancion" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/play"
+            android:layout_toRightOf="@+id/play"
+            android:layout_toEndOf="@+id/play"
+            android:layout_marginLeft="27dp"
+            android:layout_marginStart="27dp"
+            android:background="@drawable/ic_next"
+            android:id="@+id/next" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="26dp"
+            android:layout_marginEnd="26dp"
+            android:layout_alignBaseline="@+id/play"
+            android:layout_alignBottom="@+id/play"
+            android:layout_toLeftOf="@+id/play"
+            android:layout_toStartOf="@+id/play"
+            android:background="@drawable/ic_previous"
+            android:id="@+id/previous" />
+
+        <ProgressBar
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="19dp"
+            android:id="@+id/barraCancion"
+            android:paddingRight="15dp"
+            android:paddingLeft="15dp" />
+
+        <TextView
+            android:text="Album"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/nombreCancion"
+            android:layout_centerHorizontal="true"
+            android:textSize="18sp"
+            android:textAlignment="center"
+            android:id="@+id/album" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/play"
+            android:background="@drawable/ic_play"
+            android:layout_above="@+id/barraCancion"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="13dp" />
+
+    </RelativeLayout>
+</FrameLayout>

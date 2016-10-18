@@ -92,9 +92,10 @@ public class MainActivity extends AppCompatActivity
             fragmentTransaction.commit();
             getSupportActionBar().setTitle("Inicio");
         } else if (id == R.id.nav_album) {
-
-        } else if (id == R.id.nav_library) {
-
+            fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.framePrincipal,new AlbumFragment());
+            fragmentTransaction.commit();
+            getSupportActionBar().setTitle("Albumes");
         } else if (id == R.id.nav_login) {
 
         }
