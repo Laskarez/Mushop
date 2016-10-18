@@ -1,0 +1,64 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.mushop.LoginFragment">
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="94dp"
+            android:hint="Usuario"
+            android:id="@+id/usuario"
+            android:layout_marginLeft="80dp"
+            android:textSize="18sp" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:ems="10"
+            android:layout_marginTop="30dp"
+            android:id="@+id/contraseña"
+            android:hint="Contraseña"
+            android:layout_marginLeft="80dp"
+            android:textSize="18sp" />
+
+
+        <Button
+            android:text="Ingresar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/ingresar"
+            android:background="@color/accent"
+            android:textColor="@color/primary_light"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginTop="20dp" />
+
+        <Button
+            android:text="Registrarse"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/registrarse"
+            android:background="@color/accent"
+            android:textColor="@color/primary_light"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/ingresar"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp" />
+
+    </LinearLayout>
+
+
+</FrameLayout>

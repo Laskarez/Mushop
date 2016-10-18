@@ -3,6 +3,7 @@ package com.example.mushop;
 import android.app.Application;
 import android.util.Log;
 
+import com.google.firebase.auth.UserInfo;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -22,6 +23,8 @@ public class FireApp extends Application{
     public ArrayList<Cancion> listaCanciones = new ArrayList<Cancion>();
     public ArrayList<Album> listaAlbums = new ArrayList<Album>();
     public ArrayList<Artista> listaArtistas = new ArrayList<Artista>();
+
+    public ArrayList<Usuario> listaUsuarios = new ArrayList<Usuario>();
 
 
     @Override
@@ -134,6 +137,47 @@ public class FireApp extends Application{
                             Integer.parseInt(map.get("id_artist").toString()),
                             map.get("artist_name").toString());
                     listaArtistas.add(artista);
+                } catch (Exception e) {
+                    Log.v("Excepcion", e.getMessage());
+                }
+            }
+
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+    }
+
+    public void searchUsersDataBase() {
+        DatabaseReference mData = FirebaseDatabase.getInstance().getReference();
+        DatabaseReference album = mData.child("user");
+        listaUsuarios = new ArrayList<Usuario>();
+        album.addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                try {
+                    Map<String, Object> map = (Map<String, Object>) dataSnapshot.getValue();
+                    Usuario usuario = new Usuario(
+                            Integer.parseInt(map.get("id_user").toString()),
+                            map.get("name").toString(),
+                            map.get("userName").toString());
+                    listaUsuarios.add(usuario);
                 } catch (Exception e) {
                     Log.v("Excepcion", e.getMessage());
                 }

@@ -97,7 +97,10 @@ public class MainActivity extends AppCompatActivity
             fragmentTransaction.commit();
             getSupportActionBar().setTitle("Albumes");
         } else if (id == R.id.nav_login) {
-
+            fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.framePrincipal,new LoginFragment());
+            fragmentTransaction.commit();
+            getSupportActionBar().setTitle("Iniciar Sesión");
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
